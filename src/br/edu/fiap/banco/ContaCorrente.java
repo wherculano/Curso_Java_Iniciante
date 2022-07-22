@@ -25,9 +25,12 @@ public class ContaCorrente extends Conta {
 	}
 
 	@Override
-	public void sacar(double valor) {
+	public boolean sacar(double valor) {
 		valor += 20;
-		super.sacar(valor);
+		if (super.sacar(valor)) {
+			return true;
+		}
+		return false;
 	}
 
 }
