@@ -6,8 +6,14 @@ public class Teste {
 		Conta conta = new Conta();
 		conta.depositar(1000);
 		conta.sacar(100);
+		Pessoa wagner = new Pessoa("Wagner");
+		conta.setTitular(wagner);
+		System.out.println("Conta -> " + conta.getTitular());
 
 		ContaCorrente contaCorrente = new ContaCorrente();
+		Pessoa herculano = new Pessoa("Herculano");
+		contaCorrente.setTitular(herculano);
+		System.out.println("ContaCorrente -> " + contaCorrente.getTitular());
 		contaCorrente.depositar(1000);
 		contaCorrente.sacar(100);
 
@@ -24,6 +30,7 @@ public class Teste {
 		System.out.println("Saldo Conta: R$" + conta.getSaldo());
 //		System.out.println("Saldo Conta Corrente: R$" + contaCorrente.getSaldo());
 		System.out.println("Saldo Conta 2: R$" + conta_2.getSaldo());
+		
 
 	}
 }

@@ -14,6 +14,7 @@ public class Conta implements Serializable {
 	private int agencia;
 	private int numero;
 	private double saldo;
+	private Pessoa titular;
 
 	public int getAgencia() {
 		return agencia;
@@ -30,7 +31,15 @@ public class Conta implements Serializable {
 	public void setNumero(int numero) {
 		this.numero = numero;
 	}
-
+	
+	public void setTitular(Pessoa titular) {
+		this.titular = titular;
+	}
+	
+	public String getTitular() {
+		return this.titular.getNome();
+	}
+	
 	public Conta() {
 	}
 
