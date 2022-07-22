@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @version 1.0
  */
 
-public class Conta implements Serializable{
+public class Conta implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int agencia;
 	private int numero;
@@ -46,7 +46,9 @@ public class Conta implements Serializable{
 	 * @param valor que será depositado
 	 */
 	public void depositar(double valor) {
-		this.saldo += valor;
+		if (valor > 0) {
+			this.saldo += valor;
+		}
 	}
 
 	/**
@@ -56,7 +58,9 @@ public class Conta implements Serializable{
 	 * @see depositar
 	 */
 	public void sacar(double valor) {
-		this.saldo -= valor;
+		if(this.saldo >= valor && valor > 0) {
+			this.saldo -= valor;
+		}
 	}
 
 	/**
