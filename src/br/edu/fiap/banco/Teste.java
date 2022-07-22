@@ -10,14 +10,19 @@ public class Teste {
 		ContaCorrente contaCorrente = new ContaCorrente();
 		contaCorrente.depositar(1000);
 		contaCorrente.sacar(100);
-		
+
 		// Conta: variável de controle. ContaCorrente: Objeto.
 		Conta conta_2 = new ContaCorrente();
 		conta_2.depositar(1000);
-		conta_2.sacar(-100); // metodo do objeto.
-		
+		conta_2.sacar(100); // metodo do objeto.
+
 		System.out.println("Saldo Conta: R$" + conta.getSaldo());
 		System.out.println("Saldo Conta Corrente: R$" + contaCorrente.getSaldo());
+		System.out.println("Saldo Conta 2: R$" + conta_2.getSaldo());
+
+		conta.transferir(50, conta_2);
+		System.out.println("Saldo Conta: R$" + conta.getSaldo());
+//		System.out.println("Saldo Conta Corrente: R$" + contaCorrente.getSaldo());
 		System.out.println("Saldo Conta 2: R$" + conta_2.getSaldo());
 
 	}

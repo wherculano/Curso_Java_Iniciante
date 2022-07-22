@@ -57,12 +57,28 @@ public class Conta implements Serializable {
 	 * @param valor
 	 * @see depositar
 	 */
-	public void sacar(double valor) {
+	public boolean sacar(double valor) {
 		if(this.saldo >= valor && valor > 0) {
 			this.saldo -= valor;
+			return true;
 		}
+		return false;
 	}
-
+	
+	/**
+	 * Efetua transferencia de valores entre Contas
+	 * @param valor a ser transferido
+	 * @param destino Conta para onde vai o valor
+	 */
+	public boolean transferir(double valor, Conta destino) {
+		if (this.sacar(valor)) {
+			destino.depositar(valor);
+			return true;
+		}
+		return false;
+		
+	}
+	
 	/**
 	 * Verifica o saldo da Conta
 	 * 
