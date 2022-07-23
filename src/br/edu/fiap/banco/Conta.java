@@ -15,6 +15,7 @@ public class Conta implements Serializable {
 	private int numero;
 	private double saldo;
 	private Pessoa titular;
+	private static int totalDeContasExistentes = 0;
 
 	public int getAgencia() {
 		return agencia;
@@ -41,12 +42,14 @@ public class Conta implements Serializable {
 	}
 	
 	public Conta() {
+		Conta.totalDeContasExistentes += 1;
 	}
 
 	public Conta(int agencia, int numero, double saldo) {
 		this.agencia = agencia;
 		this.numero = numero;
 		this.saldo = saldo;
+		Conta.totalDeContasExistentes += 1;
 	}
 
 	/**
@@ -95,5 +98,13 @@ public class Conta implements Serializable {
 	 */
 	public double getSaldo() {
 		return this.saldo;
+	}
+	
+	/**
+	 * 
+	 * @return Tptal de contas existentes
+	 */
+	public static int getTotalDeContasExistentes() {
+		return Conta.totalDeContasExistentes;
 	}
 }

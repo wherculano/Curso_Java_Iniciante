@@ -31,6 +31,8 @@ public class Teste {
 //		System.out.println("Saldo Conta Corrente: R$" + contaCorrente.getSaldo());
 		System.out.println("Saldo Conta 2: R$" + conta_2.getSaldo());
 		
+		System.out.println("Total de contas criadas até o momento: " + Conta.getTotalDeContasExistentes());
+		
 
 	}
 }
