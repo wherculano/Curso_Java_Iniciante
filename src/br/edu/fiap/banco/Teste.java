@@ -3,23 +3,20 @@ package br.edu.fiap.banco;
 public class Teste {
 	public static void main(String[] args) {
 
-		Conta conta = new Conta();
-		conta.depositar(1000);
+		Conta conta = new Conta(12, 1234, 1000.10);
 		conta.sacar(100);
 		Pessoa wagner = new Pessoa("Wagner", "111.222.333-44");
 		conta.setTitular(wagner);
 		System.out.println("Conta -> " + conta.getTitular());
 
-		ContaCorrente contaCorrente = new ContaCorrente();
+		ContaCorrente contaCorrente = new ContaCorrente(123, 1234, 1000.0);
 		Pessoa herculano = new Pessoa("Herculano", "222.333.444-55");
 		contaCorrente.setTitular(herculano);
 		System.out.println("ContaCorrente -> " + contaCorrente.getTitular());
-		contaCorrente.depositar(1000);
 		contaCorrente.sacar(100);
 
 		// Conta: variável de controle. ContaCorrente: Objeto.
-		Conta conta_2 = new ContaCorrente();
-		conta_2.depositar(1000);
+		Conta conta_2 = new ContaCorrente(456, 9876, 1000.75);
 		conta_2.sacar(100); // metodo do objeto.
 
 		System.out.println("Saldo Conta: R$" + conta.getSaldo());

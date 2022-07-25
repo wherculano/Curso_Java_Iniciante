@@ -32,17 +32,13 @@ public class Conta implements Serializable {
 	public void setNumero(int numero) {
 		this.numero = numero;
 	}
-	
+
 	public void setTitular(Pessoa titular) {
 		this.titular = titular;
 	}
-	
+
 	public String getTitular() {
 		return this.titular.getNome();
-	}
-	
-	public Conta() {
-		Conta.totalDeContasExistentes += 1;
 	}
 
 	public Conta(int agencia, int numero, double saldo) {
@@ -70,16 +66,17 @@ public class Conta implements Serializable {
 	 * @see depositar
 	 */
 	public boolean sacar(double valor) {
-		if(this.saldo >= valor && valor > 0) {
+		if (this.saldo >= valor && valor > 0) {
 			this.saldo -= valor;
 			return true;
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Efetua transferencia de valores entre Contas
-	 * @param valor a ser transferido
+	 * 
+	 * @param valor   a ser transferido
 	 * @param destino Conta para onde vai o valor
 	 */
 	public boolean transferir(double valor, Conta destino) {
@@ -88,9 +85,9 @@ public class Conta implements Serializable {
 			return true;
 		}
 		return false;
-		
+
 	}
-	
+
 	/**
 	 * Verifica o saldo da Conta
 	 * 
@@ -99,7 +96,7 @@ public class Conta implements Serializable {
 	public double getSaldo() {
 		return this.saldo;
 	}
-	
+
 	/**
 	 * 
 	 * @return Tptal de contas existentes
