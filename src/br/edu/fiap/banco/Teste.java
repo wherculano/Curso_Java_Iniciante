@@ -6,12 +6,12 @@ public class Teste {
 		Conta conta = new Conta();
 		conta.depositar(1000);
 		conta.sacar(100);
-		Pessoa wagner = new Pessoa("Wagner");
+		Pessoa wagner = new Pessoa("Wagner", "111.222.333-44");
 		conta.setTitular(wagner);
 		System.out.println("Conta -> " + conta.getTitular());
 
 		ContaCorrente contaCorrente = new ContaCorrente();
-		Pessoa herculano = new Pessoa("Herculano");
+		Pessoa herculano = new Pessoa("Herculano", "222.333.444-55");
 		contaCorrente.setTitular(herculano);
 		System.out.println("ContaCorrente -> " + contaCorrente.getTitular());
 		contaCorrente.depositar(1000);

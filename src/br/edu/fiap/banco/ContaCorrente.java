@@ -1,6 +1,7 @@
 package br.edu.fiap.banco;
 
 public class ContaCorrente extends Conta {
+	private static final long serialVersionUID = 1L;
 	private String tipo;
 	private double chequeEspecial;
 
