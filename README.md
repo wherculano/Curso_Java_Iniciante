@@ -1,6 +1,4 @@
-### FIAP - Curso de Java 
-
-<br>
+### FIAP - Curso de Java<br>
 
 ### Módulo 1
 * Princípios da Orientação a Objetos;
@@ -63,3 +61,5 @@
 * Refatorando Código com Design Patterns;
 * Singleton;
 * Controle Transacional.
+
+##### Outros commits efetuados foram utilizando exemplos feitos no Curso de Java da [Alura](https://www.alura.com.br).    
