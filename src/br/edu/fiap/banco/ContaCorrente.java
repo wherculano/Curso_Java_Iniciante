@@ -4,11 +4,11 @@ public class ContaCorrente extends Conta {
 	private static final long serialVersionUID = 1L;
 	private String tipo;
 	private double chequeEspecial;
-	
+
 	public ContaCorrente(int agencia, int numero, double saldo) {
 		super(agencia, numero, saldo);
 	}
-	
+
 	public String getTipo() {
 		return this.tipo;
 	}
