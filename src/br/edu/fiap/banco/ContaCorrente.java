@@ -31,7 +31,7 @@ public class ContaCorrente extends Conta {
 
 	@Override
 	public boolean sacar(double valor) {
-		valor += 20;
+		valor += 0.5;
 		if (super.sacar(valor)) {
 			return true;
 		}
