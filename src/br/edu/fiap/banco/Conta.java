@@ -4,16 +4,16 @@ import java.io.Serializable;
 
 /**
  * Classe que abstrai uma Conta bancária
- * 
+ * e nenhum objeto poderá criar uma instancia dessa classe.
  * @author Wagner Herculano
  * @version 1.0
  */
 
-public class Conta implements Serializable {
+public abstract class Conta implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int agencia;
 	private int numero;
-	private double saldo;
+	protected double saldo;
 	private Pessoa titular;
 	private static int totalDeContasExistentes = 0;
 
@@ -53,11 +53,7 @@ public class Conta implements Serializable {
 	 * 
 	 * @param valor que será depositado
 	 */
-	public void depositar(double valor) {
-		if (valor > 0) {
-			this.saldo += valor;
-		}
-	}
+	public abstract void depositar(double valor);
 
 	/**
 	 * Retira um valor do Saldo da Conta

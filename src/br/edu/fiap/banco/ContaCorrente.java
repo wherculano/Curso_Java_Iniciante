@@ -37,5 +37,12 @@ public class ContaCorrente extends Conta {
 		}
 		return false;
 	}
+	
+	@Override
+	public void depositar(double valor) {
+		if (valor > 0) {
+			super.saldo += valor;
+		}
+	}
 
 }
