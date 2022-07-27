@@ -1,6 +1,7 @@
 package br.edu.fiap.banco;
 
-public class ContaCorrente extends Conta {
+public class ContaCorrente extends Conta implements Tributavel{
+	
 	private static final long serialVersionUID = 1L;
 	private String tipo;
 	private double chequeEspecial;
@@ -43,6 +44,11 @@ public class ContaCorrente extends Conta {
 		if (valor > 0) {
 			super.saldo += valor;
 		}
+	}
+
+	@Override
+	public double getValorImposto() {
+		return super.saldo * 0.01;
 	}
 
 }
