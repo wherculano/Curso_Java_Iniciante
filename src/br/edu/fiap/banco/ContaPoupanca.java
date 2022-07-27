@@ -13,4 +13,12 @@ public class ContaPoupanca extends Conta {
 			super.saldo += valor;
 		}
 	}
+	
+	@Override
+	public boolean sacar(double valor) {
+		if (super.sacar(valor)) {
+			return true;
+		}
+		return false;
+	}
 }
