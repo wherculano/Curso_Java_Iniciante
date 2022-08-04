@@ -18,7 +18,7 @@ public class ContaPoupanca extends Conta {
     }
 
     @Override
-    public void sacar(double valor) {
+    public void sacar(double valor) throws SaldoInsuficienteException{
         super.sacar(valor);
     }
 }
