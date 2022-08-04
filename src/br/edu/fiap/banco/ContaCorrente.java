@@ -34,8 +34,10 @@ public class ContaCorrente extends Conta implements Tributavel {
     }
 
     @Override
-    public void sacar(double valor) {
-        valor += 0.5;
+    public void sacar(double valor) throws SaldoInsuficienteException{
+        if(valor >= 1){
+            valor += 0.5;
+        }
         super.sacar(valor);
     }
 
