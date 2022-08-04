@@ -9,7 +9,11 @@ public class TestaContaCorrente {
         contaCorrente.setTitular(herculano);
 
         System.out.println("ContaCorrente -> " + contaCorrente.getTitular() + " -> Saldo: R$" + contaCorrente.getSaldo());
-        contaCorrente.sacar(100);
+        try {
+            contaCorrente.sacar(100);
+        } catch (SaldoInsuficienteException e) {
+            System.out.println(e.getMessage());
+        }
         System.out.println("Saldo Conta Corrente após saque de R$100: R$" + contaCorrente.getSaldo());
 
         // Conta: variável de controle. ContaCorrente: Objeto.
@@ -19,12 +23,22 @@ public class TestaContaCorrente {
         conta_2.setTitular(wagner);
         System.out.println("ContaCorrente 2 -> " + conta_2.getTitular() + " -> Saldo: R$" + conta_2.getSaldo());
 
-        conta_2.sacar(100); // metodo do objeto.
+        try {
+            conta_2.sacar(100); // metodo do objeto.
+        } catch (SaldoInsuficienteException e) {
+            throw new RuntimeException(e);
+        }
         System.out.println("Saldo Conta 2 após saque de R$100: R$" + conta_2.getSaldo());
 
-        conta_2.transferir(10.75, contaCorrente);
-        System.out.println("Saldo Conta 2 após transferencia de R$10.75: R$" + conta_2.getSaldo());
-        System.out.println("Saldo Conta Corrente após deposito de R$10.75: R$" + contaCorrente.getSaldo());
+        try {
+            double valor = 0.75;
+            conta_2.transferir(valor, contaCorrente);
+            System.out.println("Saldo Conta 2 após transferencia de R$"+ valor + ": R$" + conta_2.getSaldo());
+            System.out.println("Saldo Conta Corrente após deposito de R$"+ valor + ": R$" + contaCorrente.getSaldo());
+        } catch (SaldoInsuficienteException | ValorInvalidoException ex) {
+            System.out.println(ex.getMessage());
+        }
+
     }
 
 }

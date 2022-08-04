@@ -65,12 +65,13 @@ public abstract class Conta implements Serializable {
      * @param valor a ser retirado
      * @see this.depositar
      */
-    public boolean sacar(double valor) {
-        if (this.saldo >= valor && valor > 0) {
-            this.saldo -= valor;
-            return true;
+    public void sacar(double valor) throws SaldoInsuficienteException{
+        if (this.saldo < valor) {
+            throw new SaldoInsuficienteException("Saldo R$:" + this.saldo + ", Valor R$:" + valor);
+        }else if (valor <= 0){
+            throw new ValorInvalidoException("Impossível sacar valor inferior a R$1. " + "Valor: R$" + valor);
         }
-        return false;
+        this.saldo -= valor;
     }
 
     /**
@@ -79,13 +80,9 @@ public abstract class Conta implements Serializable {
      * @param valor   a ser transferido
      * @param destino Conta para onde vai o valor
      */
-    public boolean transferir(double valor, Conta destino) {
-        if (this.sacar(valor)) {
-            destino.depositar(valor);
-            return true;
-        }
-        return false;
-
+    public void transferir(double valor, Conta destino) throws SaldoInsuficienteException{
+        this.sacar(valor);
+        destino.depositar(valor);
     }
 
     /**
