@@ -1,4 +1,8 @@
-package br.edu.fiap.banco;
+package br.edu.fiap.banco.tests;
+
+import br.edu.fiap.banco.model.CalculadorDeImposto;
+import br.edu.fiap.banco.model.ContaCorrente;
+import br.edu.fiap.banco.model.SeguroDeVida;
 
 public class TestaTributaveis {
     public static void main(String[] args) {

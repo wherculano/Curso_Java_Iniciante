@@ -1,4 +1,4 @@
-package br.edu.fiap.banco;
+package br.edu.fiap.banco.model;
 
 import java.io.Serial;
 import java.io.Serializable;

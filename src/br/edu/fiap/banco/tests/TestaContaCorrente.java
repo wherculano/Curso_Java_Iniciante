@@ -1,4 +1,6 @@
-package br.edu.fiap.banco;
+package br.edu.fiap.banco.tests;
+
+import br.edu.fiap.banco.model.*;
 
 public class TestaContaCorrente {
 
