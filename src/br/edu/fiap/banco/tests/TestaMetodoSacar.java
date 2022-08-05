@@ -1,4 +1,8 @@
-package br.edu.fiap.banco;
+package br.edu.fiap.banco.tests;
+
+import br.edu.fiap.banco.model.Conta;
+import br.edu.fiap.banco.model.ContaCorrente;
+import br.edu.fiap.banco.model.SaldoInsuficienteException;
 
 public class TestaMetodoSacar {
     public static void main(String[] args) {

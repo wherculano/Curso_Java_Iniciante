@@ -1,4 +1,4 @@
-package br.edu.fiap.banco;
+package br.edu.fiap.banco.model;
 
 public class SeguroDeVida implements Tributavel {
 
