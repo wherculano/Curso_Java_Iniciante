@@ -53,4 +53,11 @@ public class ContaCorrente extends Conta implements Tributavel {
         return super.saldo * 0.01;
     }
 
+    @Override
+    public String toString() {
+        return String.format(
+                "Conta Corrente(agencia: %d, numero: %d, saldo: %.2f)",
+                this.getAgencia(), this.getNumero(), this.getSaldo()
+        );
+    }
 }

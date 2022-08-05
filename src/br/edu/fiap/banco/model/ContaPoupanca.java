@@ -21,4 +21,12 @@ public class ContaPoupanca extends Conta {
     public void sacar(double valor) throws SaldoInsuficienteException{
         super.sacar(valor);
     }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "Conta Poupanca(agencia: %d, numero: %d, saldo: %.2f)",
+                this.getAgencia(), this.getNumero(), this.getSaldo()
+        );
+    }
 }
