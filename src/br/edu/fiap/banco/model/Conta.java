@@ -40,8 +40,8 @@ public abstract class Conta implements Serializable {
         this.titular = titular;
     }
 
-    public String getTitular() {
-        return this.titular.getNome();
+    public Pessoa getTitular() {
+        return this.titular;
     }
 
     public Conta(int agencia, int numero, double saldo) {
@@ -99,5 +99,13 @@ public abstract class Conta implements Serializable {
      */
     public static int getTotalDeContasExistentes() {
         return Conta.totalDeContasExistentes;
+    }
+
+    @Override
+    public boolean equals(Object refGenerica){
+        Conta outraConta = (Conta) refGenerica;
+        if(this.agencia != outraConta.agencia){
+            return false;
+        }else return this.numero == outraConta.numero;
     }
 }

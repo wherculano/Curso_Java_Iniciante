@@ -62,8 +62,10 @@
 * Singleton;
 * Controle Transacional.
 
-##### Outros commits efetuados foram utilizando exemplos feitos no Curso de Java da [Alura](https://www.alura.com.br):    
+##### Outros commits efetuados foram utilizando exemplos feitos nos Cursos de Java da [Alura](https://www.alura.com.br):    
  * [Java JRE e JDK: compile e execute o seu programa](https://cursos.alura.com.br/course/java-primeiros-passos)
  * [Java OO: Entendendo a Orientação a Objetos](https://cursos.alura.com.br/course/java-introducao-orientacao-objetos)
  * [Java Polimorfismo: entenda herança e interfaces](https://cursos.alura.com.br/course/java-heranca-interfaces-polimorfismo)
  * [Java Exceções: aprenda a criar, lançar e controlar exceções](https://cursos.alura.com.br/course/java-excecoes)
+ * [Java e java.lang: programe com a classe Object e String](https://cursos.alura.com.br/course/java-pacotes-e-java-lang)
+ * [Java e java.util: Coleções, Wrappers e Lambda expressions](https://cursos.alura.com.br/course/java-util-lambdas)
