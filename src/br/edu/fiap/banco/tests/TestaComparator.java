@@ -1,8 +1,11 @@
 package br.edu.fiap.banco.tests;
 
-import br.edu.fiap.banco.model.*;
+import br.edu.fiap.banco.model.Conta;
+import br.edu.fiap.banco.model.ContaCorrente;
+import br.edu.fiap.banco.model.Pessoa;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class TestaComparator {
@@ -27,20 +30,22 @@ public class TestaComparator {
         listaContas.add(cc3);
 
         for (Conta cc : listaContas) {
-//            System.out.println(cc);
             System.out.println(cc.getTitular().getNome() + " -> " + cc);
         }
 
-//        NumeroDaAgenciaComparator comparator = new NumeroDaAgenciaComparator();
-        TitularDaContaComparator comparator = new TitularDaContaComparator();
-        listaContas.sort(comparator);
+        //lambda function que substitui o uso da classe NumeroDaAgenciaComparator (deletada. Estava no commit anterior)
+        listaContas.sort((Conta c1, Conta c2) -> Integer.compare(c1.getAgencia(), c2.getAgencia()));
+
+        //lambda function que substitui o uso da classe  TitularDaContaComparator (deletada. Estava no commit anterior)
+        Comparator<Conta> comp = (Conta c1, Conta c2) -> {
+            String nomeTitular1 = c1.getTitular().getNome();
+            String nomeTitular2 = c2.getTitular().getNome();
+            return nomeTitular1.compareTo(nomeTitular2);
+        };
+//        listaContas.sort(comp);
 
         System.out.println("----------".repeat(6));
 
-        for (Conta cc : listaContas) {
-//            System.out.println(cc);
-            System.out.println(cc.getTitular().getNome() + " -> " + cc);
-        }
+        listaContas.forEach((conta) -> System.out.println(conta.getTitular().getNome() + " -> " + conta));
     }
-
 }
