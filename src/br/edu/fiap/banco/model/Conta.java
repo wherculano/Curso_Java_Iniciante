@@ -40,8 +40,8 @@ public abstract class Conta implements Serializable {
         this.titular = titular;
     }
 
-    public String getTitular() {
-        return this.titular.getNome();
+    public Pessoa getTitular() {
+        return this.titular;
     }
 
     public Conta(int agencia, int numero, double saldo) {

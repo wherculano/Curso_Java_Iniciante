@@ -10,7 +10,7 @@ public class TestaContaCorrente {
         Pessoa herculano = new Pessoa("Herculano", "222.333.444-55");
         contaCorrente.setTitular(herculano);
 
-        System.out.println("ContaCorrente -> " + contaCorrente.getTitular() + " -> Saldo: R$" + contaCorrente.getSaldo());
+        System.out.println("ContaCorrente -> " + contaCorrente.getTitular().getNome() + " -> Saldo: R$" + contaCorrente.getSaldo());
         try {
             contaCorrente.sacar(100);
         } catch (SaldoInsuficienteException e) {
@@ -23,7 +23,7 @@ public class TestaContaCorrente {
 
         Pessoa wagner = new Pessoa("Wagner", "333.444.555-66");
         conta_2.setTitular(wagner);
-        System.out.println("ContaCorrente 2 -> " + conta_2.getTitular() + " -> Saldo: R$" + conta_2.getSaldo());
+        System.out.println("ContaCorrente 2 -> " + conta_2.getTitular().getNome() + " -> Saldo: R$" + conta_2.getSaldo());
 
         try {
             conta_2.sacar(100); // metodo do objeto.
